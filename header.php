@@ -25,7 +25,7 @@
             </div>
 
             <div class="logo-container" id="logo3"> 
-                <a href="page_connexion.php"><img src="logo\calendar.png" alt=""></a>
+                <a href="Calendar.php"><img src="logo\calendar.png" alt=""></a>
             </div>
 
             <div class="logo-container" id="logo4"> 
@@ -57,7 +57,7 @@
             </div>
 
             <div class="logo-container" id="logo3"> 
-                <a href="page_connexion.php"><img src="logo\calendar.png" alt=""></a>
+                <a href="Calendar.php"><img src="logo\calendar.png" alt=""></a>
             </div>
 
             <div class="logo-container" id="logo4"> 
@@ -87,7 +87,7 @@
             </div>
 
             <div class="logo-container" id="logo3"> 
-                <a href="page_connexion.php"><img src="logo\calendar.png" alt=""></a>
+                <a href="Calendar.php"><img src="logo\calendar.png" alt=""></a>
             </div>
 
             <div class="logo-container" id="logo4"> 

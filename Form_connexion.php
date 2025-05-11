@@ -50,7 +50,7 @@
             </div>
             <button type="submit">S'inscrire</button>
         </form>
-        <button onclick="moveCarousel(1)" style="background: none; border: none; color: white; font-size: 16px; cursor: pointer;">Déjà inscrit ? Se conecter </button>
+        <button onclick="moveCarousel(-1)" style="background: none; border: none; color: white; font-size: 16px; cursor: pointer;">Déjà inscrit ? Se conecter </button>
             </div>
 
             <section id="carousel">

@@ -34,7 +34,7 @@
 
             echo "Connexion réussie!";
             // Redirection vers la page de série
-            header("Location: essaie.php");
+            header("Location: espace_livre.php");
             exit();
         } else {
             echo "Série pas trouver.";

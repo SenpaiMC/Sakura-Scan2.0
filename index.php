@@ -14,11 +14,6 @@ $images = $query->fetchAll(PDO::FETCH_ASSOC);
     <!-- Swiper CSS -->
     <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css">
     <style>
-        body {
-            font-family: Arial, sans-serif;
-            margin: 0;
-            padding: 0;
-        }
         .swiper {
             margin-top: 3%;
             width: 90%;
@@ -29,14 +24,13 @@ $images = $query->fetchAll(PDO::FETCH_ASSOC);
             justify-content: center;
             align-items: center;
             font-size: 20px;
-            background: #ddd;
         }
         
         .swiper-slide button{
             width: 100%;
             height: auto;
             border: none;
-            background: none;
+            background-color: #fff;
             cursor: pointer;
 
         }
@@ -63,9 +57,27 @@ $images = $query->fetchAll(PDO::FETCH_ASSOC);
             <?php endforeach; ?>
         </div>
     </div>
+    <section id="navigation">      
+        <div class="swiper-button-next"></div>
+        <div class="swiper-button-prev"></div>
+    </section>
     <!-- Add navigation buttons -->
-    <div class="swiper-button-next"></div>
-    <div class="swiper-button-prev"></div>
+
+    <style>
+        #navigation {
+            width: 100%;
+            margin-top: 50px;
+            /* transform: translateY(-50%); */
+            background-color: #fff;
+        }
+        .swiper-button-next, .swiper-button-prev {
+            color: #fff;
+            padding: 10px;
+        }
+        .swiper-button-next:hover, .swiper-button-prev:hover {
+            background-color: rgba(0, 0, 0, 0.8);
+        }
+    </style>
 
     <!-- Swiper JS -->
     <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
@@ -79,6 +91,13 @@ $images = $query->fetchAll(PDO::FETCH_ASSOC);
             },
             loop: true,
         });
+    </script>
+    <script>
+        swiper.params.autoplay = {
+            delay: 7000,
+            disableOnInteraction: false,
+        };
+        swiper.autoplay.start();
     </script>
 </body>
 </html>

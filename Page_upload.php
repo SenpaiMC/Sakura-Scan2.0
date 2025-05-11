@@ -3,6 +3,9 @@
 <?php
     $genres = ["Action","Aventure","Comédie","Drame","Fantastique","Horreur","Romance","Science-fiction","Autre","Système"]; 
     $types = ["manga", "manhwa", "manhua", "autre"];
+    $situation = ["En cours", "Terminé", "Suspendu"];
+    $livre_sortie = ["Lundi", "Mardi", "Mercredi", "Jeudi", "Vendredi", "Samedi", "Dimanche", "Indéterminé"];
+
 ?>
 
 <!DOCTYPE html>
@@ -21,6 +24,25 @@
             <form action="upload_m.php" method="post" enctype="multipart/form-data">
                 <label for="titre">Titre du Manga:</label>
                 <input type="text" id="titre" name="titre" required><br><br>
+
+                <label for="auteurs">Auteurs:</label>
+                <input type="text" id="auteurs" name="auteurs" required><br><br>
+
+                <label for="situation">Situation:</label>
+                <select inputmode="text" id="situation" name="situation" required>
+                    <option value="">Sélectionner une situation</option>
+                    <?php foreach ($situation as $situation): ?>
+                        <option value="<?php echo htmlspecialchars($situation, ENT_QUOTES, 'UTF-8'); ?>"><?php echo htmlspecialchars($situation, ENT_QUOTES, 'UTF-8'); ?></option>
+                        <?php endforeach; ?>
+                    </select> <br><br>
+
+                <label for="livre_sortie">Jour de sortie:</label>
+                <select inputmode="text" id="livre_sortie" name="livre_sortie" required>
+                    <option value="">Sélectionner un jour</option>
+                    <?php foreach ($livre_sortie as $livre_sortie): ?>
+                        <option value="<?php echo htmlspecialchars($livre_sortie, ENT_QUOTES, 'UTF-8'); ?>"><?php echo htmlspecialchars($livre_sortie, ENT_QUOTES, 'UTF-8'); ?></option>
+                        <?php endforeach; ?>
+                    </select> <br><br>
                 
                 <select inputmode="text" id="genre" name="genre" required>
                     <option value="">Sélectionner un genre</option>

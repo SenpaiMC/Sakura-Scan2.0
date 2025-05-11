@@ -1,9 +1,12 @@
 <?php
+$hostname = 'localhost';
+$username = 'root';
+$password = '';
+$database = 'sakura_scan';
 
 mysqli_report(MYSQLI_REPORT_ERROR | MYSQLI_REPORT_STRICT);
 
-$mysqli = new mysqli("localhost", "root", "", "sakura_scan");
-// Check connection
+$mysqli = new mysqli("$hostname", "$username", "$password", "$database");// Check connection
 if ($mysqli->connect_error) {
     exit("Connection failed: " . $mysqli->connect_error);
 }

@@ -6,9 +6,12 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         // Gestion de l'upload de manga
         $titre = $_POST['titre'];
         $type = $_POST['type'];
+        $auteurs = $_POST['auteurs'];
         $genre = $_POST['genre'];
         $description = $_POST['description'];
         $image = $_FILES['image'];
+        $situation = $_POST['situation'];
+        $livre_sortie = $_POST['livre_sortie'];
 
         // Création d'un dossier basé sur le titre
         $titre_dossier = preg_replace('/[^a-zA-Z0-9_-]/', '_', $titre); // Nettoyage du titre pour éviter les caractères spéciaux
@@ -29,9 +32,11 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
 
         // Insertion dans la base de données
-        $stmt = $mysqli->prepare("INSERT INTO livres (titre, genre, type, description, image) VALUES (?, ?, ?, ?, ?)");
-        $stmt->execute([$titre, $genre, $type, $description, $imagePath]);
+        $stmt = $mysqli->prepare("INSERT INTO livres (titre, auteurs , genre, type, description, image, situation, livre_sortie) VALUES (?, ?, ?, ?, ? , ?, ?, ?)");
+        $stmt->execute([$titre, $auteurs, $genre, $type, $description, $imagePath, $situation, $livre_sortie]);
 
+        header("Location: Page_upload.php"); // Redirection après l'upload
+        exit;
         echo "Manga déposé avec succès !";
     } elseif (isset($_POST['manga_id'])) {
         // Gestion de l'upload de chapitre

@@ -2,15 +2,15 @@ body {
     margin: 0;
     padding: 0;
     font-family: Arial, sans-serif;
-    background-color: #f4f4f4;
+    background-color: #4f6172;
 }
 
 
 header {
     width: 100%;
     height: auto;
-    background-color: #727a88;
-    border-bottom: 4px solid #EF7F7D;
+    background-color: #2a3843;
+    border-bottom: 4px solid #f2088a;
     display: flex;
     justify-content: center;
     align-items: center;
