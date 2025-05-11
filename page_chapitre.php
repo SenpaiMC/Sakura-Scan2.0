@@ -5,12 +5,15 @@
 $chemin = isset($_POST['chemin']) ? $_POST['chemin'] : null; // Récupérer le chemin d'accès du chapitre
 $numero = isset($_POST['numero']) && is_numeric($_POST['numero']) ? (int)$_POST['numero'] : 1; // Récupérer le numéro du chapitre ou définir par défaut à 1
 // Configuration
-$directory = htmlspecialchars($chemin) . '/'; // Dossier contenant les images des mangas
+$directory = $chemin . '/'; // Dossier contenant les images des mangas
 
 // Récupérer toutes les images du répertoire et les trier par ordre croissant
-$images = array_filter(scandir($directory), function($file) use ($directory) {
-    return is_file($directory . $file) && preg_match('/\.(jpg|jpeg|png|gif)$/i', $file);
-});
+$images = [];
+if (is_dir($directory)) {
+    $images = array_filter(scandir($directory), function($file) use ($directory) {
+        return is_file($directory . $file) && preg_match('/\.(jpg|jpeg|png|gif)$/i', $file);
+    });
+}
 $images = array_values($images); // Réindexer le tableau
 
 // Ajouter le chemin complet aux noms de fichiers
@@ -37,11 +40,19 @@ $images = array_map(function($file) use ($directory) {
     </div>
     <button id="prevBtn" class="carousel-prev">Précédent</button>
     <button id="nextBtn" class="carousel-next">Suivant</button>
-    <form action="page_chapitre.php" method="POST">
-                    <input type="hidden" name="chemin" value="<?php echo htmlspecialchars($chemin[+1]) ; ?>">
-                    <input type="hidden" name="numero" value="<?php echo htmlspecialchars($numero + 1); ?>">
-                    <input type="submit" value="Chapitre <?php echo htmlspecialchars($numero + 1); ?>">
-                    </form>
+
+    <style>
+        .carousel-next-chapter {
+            position: absolute;
+            bottom: -50px;
+            right: 0;
+            background-color: rgba(0, 0, 0, 0.5);
+            color: white;
+            border: none;
+            padding: 10px;
+            cursor: pointer;
+        }
+        </style>
                     </div>';
 </section>
 
@@ -71,9 +82,9 @@ $images = array_map(function($file) use ($directory) {
             background-color: rgba(150, 71, 134, 0);
             border: none;
         }
-    </style>
+        </style>
     <!-- <p>Nombre d'images : <?php echo count($images); ?></p>
-<section id="défil">
+    <section id="défil">
     <div id="page"> -->
 
     </div>
@@ -138,7 +149,7 @@ $images = array_map(function($file) use ($directory) {
         border: none;
         cursor: pointer;
     }
-
+    
     .carousel-prev, .carousel-next {
         position: absolute;
         top: 50%;
@@ -149,14 +160,14 @@ $images = array_map(function($file) use ($directory) {
         padding: 10px;
         cursor: pointer;
     }
-
+    
     .carousel-prev {
         left: -50px;
     }
-
+    
     .carousel-next {
         right: -50px;
     }
-</style>
+    </style>
 </body>
 </html>
