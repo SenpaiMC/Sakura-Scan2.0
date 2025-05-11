@@ -38,15 +38,15 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         header("Location: Page_upload.php"); // Redirection après l'upload
         exit;
         echo "Manga déposé avec succès !";
-    } elseif (isset($_POST['manga_id'])) {
+    } elseif (isset($_POST['livre_id'])) {
         // Gestion de l'upload de chapitre
-        $manga_id = $_POST['manga_id'];
+        $livre_id = $_POST['livre_id'];
         $numero = $_POST['numero'];
         $chemin = $_POST['chemin'];
 
         // Insertion dans la base de données
-        $stmt = $pdo->prepare("INSERT INTO chapitres (manga_id, numero, chemin) VALUES (?, ?, ?)");
-        $stmt->execute([$manga_id, $numero, $chemin]);
+        $stmt = $pdo->prepare("INSERT INTO chapitres (livre_id, numero, chemin) VALUES (?, ?, ?)");
+        $stmt->execute([$livre_id, $numero, $chemin]);
 
         header("Location: Page_upload.php"); // Redirection après l'upload
         exit;

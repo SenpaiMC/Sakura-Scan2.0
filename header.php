@@ -39,7 +39,7 @@
             </div>
 
             <div class="logo-container" id="logo7"> 
-                <a href="deconnexion.php">Deconnexion</a>
+                <a href="deconnexion.php"><img src="logo\on_off.png" alt=""></a>
             </div>
         </div>
         <?php else : ?>
@@ -69,7 +69,7 @@
             </div>
 
             <div class="logo-container" id="logo7"> 
-                <a href="deconnexion.php">Deconnexion</a>
+                <a href="deconnexion.php"><img src="logo\on_off.png" alt=""></a>
             </div>
         </div>
         <?php else : ?>

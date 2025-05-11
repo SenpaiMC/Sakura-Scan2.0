@@ -20,8 +20,8 @@
 <section><h1>Partie Manga</h1></section>
     <section id="manga" class="page1">
         <div class="mangas" >
-            <h2>Déposer un Manga</h2>
             <form action="upload_m.php" method="post" enctype="multipart/form-data">
+                <h2>Déposer un Manga</h2>
                 <label for="titre">Titre du Manga:</label>
                 <input type="text" id="titre" name="titre" required><br><br>
 
@@ -59,7 +59,7 @@
                     </select> <br><br>
                     
                     <label for="description">Description:</label><br>
-                    <textarea id="description" name="description" rows="4" cols="30" required></textarea><br><br>
+                    <textarea id="description" name="description" rows="8" cols="60" required></textarea><br><br>
                     
                     <label for="image">Image</label>
                     <input type="file" id="image" name="image" accept=".jpg, .jpeg, .png, .gif" multiple required><br><br>
@@ -68,10 +68,10 @@
                 </form>
             </div>
             <div class="mangas">
-                <h2>Déposer un Chapitre</h2>
                 <form action="upload_m.php" method="post">
-                    <label for="manga_id">Id du manga :</label>
-                    <input type="text" id="manga_id" name="manga_id" required><br><br>
+                    <h2>Déposer un Chapitre</h2>
+                    <label for="livre_id">Id du manga :</label>
+                    <input type="text" id="livre_id" name="livre_id" required><br><br>
         
                     <label for="numero">Numéro du chapitre :</label>
                     <input type="text" id="numero" name="numero" required><br><br>
@@ -82,28 +82,28 @@
                     <input type="submit" value="Déposer le chapitre">
                 </form>
             </div>
-            <div class="mangas">
-                <h2>Liste des mangas déposés</h2>
-                <table border="1">
-                    <tr>
-                        <th>ID</th>
-                        <th>Titre</th>
-                        <th>Type</th>
-                        <th>Image</th>
-                    </tr>
-                    <?php
-                    $stmt = $pdo->query("SELECT * FROM livres");
-                    while ($row = $stmt->fetch()) {
-                        echo "<tr>";
-                        echo "<td>" . htmlspecialchars($row['id'], ENT_QUOTES, 'UTF-8') . "</td>";
-                        echo "<td>" . htmlspecialchars($row['titre'], ENT_QUOTES, 'UTF-8') . "</td>";
-                        echo "<td>" . htmlspecialchars($row['type'], ENT_QUOTES, 'UTF-8') . "</td>";
-                        echo "<td><img src='" . htmlspecialchars($row['image'], ENT_QUOTES, 'UTF-8') . "' alt='Image' width='40'></td>";
-                        echo "</tr>";
-                    }
-                    ?>
-                </table>
-            </div>
-    </section><br> <br>
+        </section><br> <br>
+        <div>
+            <h2>Liste des mangas déposés</h2>
+            <table border="1" style="width: 80%; margin: auto; text-align: center;">
+                <tr>
+                    <th>ID</th>
+                    <th>Titre</th>
+                    <th>Type</th>
+                    <th>Image</th>
+                </tr>
+                <?php
+                $stmt = $pdo->query("SELECT * FROM livres");
+                while ($row = $stmt->fetch()) {
+                    echo "<tr>";
+                    echo "<td>" . htmlspecialchars($row['id'], ENT_QUOTES, 'UTF-8') . "</td>";
+                    echo "<td>" . htmlspecialchars($row['titre'], ENT_QUOTES, 'UTF-8') . "</td>";
+                    echo "<td>" . htmlspecialchars($row['type'], ENT_QUOTES, 'UTF-8') . "</td>";
+                    echo "<td><img src='" . htmlspecialchars($row['image'], ENT_QUOTES, 'UTF-8') . "' alt='Image' width='70'></td>";
+                    echo "</tr>";
+                }
+                ?>
+            </table>
+        </div>
 </body>
 </html>

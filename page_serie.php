@@ -46,12 +46,12 @@
     include 'db_sakura-scan.php';
     session_start();
 
-    $sql = "SELECT * FROM chapitres WHERE manga_id = ?";
+    $sql = "SELECT * FROM chapitres WHERE livre_id = ?";
     $stmt = $mysqli->prepare($sql);
 
-    $stmt->bind_param("s", $_SESSION["manga_id"]);
+    $stmt->bind_param("s", $_SESSION["livre_id"]);
     // Vérification si la série existe
-    if (!isset($_GET['manga_id']) || empty($_GET['manga_id'])) {
+    if (!isset($_GET['livre_id']) || empty($_GET['livre_id'])) {
         echo "Aucun terme de recherche fourni.";
         exit();
     }

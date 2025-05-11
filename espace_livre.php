@@ -63,7 +63,7 @@ include 'header.php';
         <?php
         include 'db_sakura-scan.php';
         // Récupérer les chapitres liés à l'ID de la session
-        $query = "SELECT * FROM chapitres WHERE manga_id = ?";
+        $query = "SELECT * FROM chapitres WHERE livre_id = ?";
         $stmt = $mysqli->prepare($query);
         // Vérifie si l'ID est défini dans la session, sinon attribue une valeur par défaut de 0
         $id = isset($_SESSION['id']) ? (int)$_SESSION['id'] : 0;
@@ -106,31 +106,27 @@ include 'header.php';
             grid-template-columns: 20% 20% 20% 20%;
             grid-template-rows: 20% 20% 20%;
             margin: 10px auto;
-            padding: 10px;
             align-items: center;
             justify-content: space-around;
             border: 3px solid black;
         }
         .chapitre{
-            width: 100%;
+            width: 80%;
             height: 100px;
             align-items: center;
-            background-color: white;
-            box-sizing: border-box;
+            align-content: center;
         }
-        .chapitre input[type="submit"] {
-            width: 100%;
-            height: 100px;
-            display: flex;
-            background-color: blueviolet;
+        .chapitre input {
+            width: 80%;
+            height: 70px;
+            justify-content: center;
             color: white;
-            border: none;
+            background-color: gray;
             cursor: pointer;
-            font-size: 1.5em;
             border-radius: 5px;
         }
         .chapitre input[type="submit"]:hover {
-            background-color: #5a5a5a;
+            background-color:rgb(46, 45, 45);
         }
     </style>
 
