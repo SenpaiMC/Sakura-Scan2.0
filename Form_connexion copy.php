@@ -22,14 +22,15 @@ $images = $query->fetchAll(PDO::FETCH_ASSOC); ?>
                         <input type="hidden" name="search" value="<?= isset($image['titre']) ? htmlspecialchars($image['titre']) : '' ?>">
                         <button type="submit">
                             <img src="<?= "db-livre/" . htmlspecialchars($image['image']) ?>" alt="Image de couverture">
-                        </button> <br> <br>
+                        </button>
                     </form>
-                </div>
                     <?php endif; ?>
                     <?php endforeach; ?>
+                </div>
                 <button onclick="moveCarousel(1)" style="background: none; border: none; color: white; font-size: 24px; cursor: pointer;">Pas de compte ? S'inscrire</button>
         </div>
         <div class="carousel-slide">
+            <h1>Mardi</h1>
                         <?php foreach ($images as $image): ?>
                     <?php if (isset($image['livre_sortie']) && $image['livre_sortie'] === $jour[7]): ?>
                 <div class="slide">
@@ -37,11 +38,11 @@ $images = $query->fetchAll(PDO::FETCH_ASSOC); ?>
                         <input type="hidden" name="search" value="<?= isset($image['titre']) ? htmlspecialchars($image['titre']) : '' ?>">
                         <button type="submit">
                             <img src="<?= "db-livre/" . htmlspecialchars($image['image']) ?>" alt="Image de couverture">
-                        </button> <br> <br>
+                        </button>
                     </form>
-                </div>
                     <?php endif; ?>
                     <?php endforeach; ?>
+                </div>
                     <button onclick="moveCarousel(1)" style="background: none; border: none; color: white; font-size: 24px; cursor: pointer;">Pas de compte ? S'inscrire</button>
         </div>
 
@@ -78,8 +79,8 @@ $images = $query->fetchAll(PDO::FETCH_ASSOC); ?>
     }
     
     .carousel-container {
-        display: flex;
-        flex-direction: row;
+        /* display: flex; */
+        flex-direction: column;
         /* width: 100%; */
         justify-content: space-around;
     }
@@ -89,12 +90,11 @@ $images = $query->fetchAll(PDO::FETCH_ASSOC); ?>
         height: auto;
         flex: 0 0 100%;
         display: grid;
-        grid-template-rows: 25% 25% 25% 25%;
-        display: none;
+        grid-template-columns: 20% 20% 20% ;
+        /* grid-template-rows: 25% 25% 25% 25%; */
+        /* display: none; */
         background-color:purple;
         color: white;
-        align-content: center;
-        align-items: center;
         text-align: center;
         /* padding: 20px;
         box-sizing: border-box; */
@@ -104,13 +104,13 @@ $images = $query->fetchAll(PDO::FETCH_ASSOC); ?>
         width: 100%;
         height: auto;
         display: flex;
-        justify-content: space-around;
+        justify-content: start;
         background-color: powderblue;
     }
 
     .slide button {
         background-color:rgb(150, 71, 134);
-        width: 30%;
+        width: 70%;
         padding: 10px;
         border: none;
         cursor: pointer;
@@ -120,6 +120,7 @@ $images = $query->fetchAll(PDO::FETCH_ASSOC); ?>
         height: auto;
         object-fit: cover;
         border-radius: 10px;
+        background-color: white;
     }
 
     .carousel-slide button:hover {
