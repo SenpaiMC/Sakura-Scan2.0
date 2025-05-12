@@ -99,7 +99,7 @@
                     echo "<td>" . htmlspecialchars($row['id'], ENT_QUOTES, 'UTF-8') . "</td>";
                     echo "<td>" . htmlspecialchars($row['titre'], ENT_QUOTES, 'UTF-8') . "</td>";
                     echo "<td>" . htmlspecialchars($row['type'], ENT_QUOTES, 'UTF-8') . "</td>";
-                    echo "<td><img src='" . htmlspecialchars($row['image'], ENT_QUOTES, 'UTF-8') . "' alt='Image' width='70'></td>";
+                    echo "<td><img src='" . "db-livre/". htmlspecialchars($row['image'], ENT_QUOTES, 'UTF-8') . "' alt='Image' width='70'></td>";
                     echo "</tr>";
                 }
                 ?>
