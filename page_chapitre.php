@@ -5,7 +5,7 @@
 $chemin = isset($_POST['chemin']) ? $_POST['chemin'] : null; // Récupérer le chemin d'accès du chapitre
 $numero = isset($_POST['numero']) && is_numeric($_POST['numero']) ? (int)$_POST['numero'] : 1; // Récupérer le numéro du chapitre ou définir par défaut à 1
 // Configuration
-$directory = $chemin . '/'; // Dossier contenant les images des mangas
+$directory = "db-livre/" . $chemin . '/'; // Dossier contenant les images des mangas
 
 // Récupérer toutes les images du répertoire et les trier par ordre croissant
 $images = [];

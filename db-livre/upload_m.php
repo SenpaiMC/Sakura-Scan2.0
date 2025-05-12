@@ -48,7 +48,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         $stmt = $pdo->prepare("INSERT INTO chapitres (livre_id, numero, chemin) VALUES (?, ?, ?)");
         $stmt->execute([$livre_id, $numero, $chemin]);
 
-        header("Location: Page_upload.php"); // Redirection après l'upload
+        header("Location: ../Page_upload.php"); // Redirection après l'upload
         exit;
     } else {
         echo "Données non valides.";

@@ -21,7 +21,7 @@
             </div>
 
             <div class="logo-container" id="logo2"> 
-                    <?php include 'search-bar.php'; ?>
+                    <?php include 'header&footer\search-bar.php'; ?>
             </div>
 
             <div class="logo-container" id="logo3"> 
@@ -53,7 +53,7 @@
             </div>
 
             <div class="logo-container" id="logo2"> 
-                    <?php include 'search-bar.php'; ?>
+                    <?php include 'header&footer\search-bar.php'; ?>
             </div>
 
             <div class="logo-container" id="logo3"> 
@@ -83,7 +83,7 @@
             </div>
 
             <div class="logo-container" id="logo2"> 
-                    <?php include 'search-bar.php'; ?>
+                    <?php include 'header&footer\search-bar.php'; ?>
             </div>
 
             <div class="logo-container" id="logo3"> 

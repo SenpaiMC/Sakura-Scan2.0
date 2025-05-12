@@ -47,10 +47,10 @@ $images = $query->fetchAll(PDO::FETCH_ASSOC);
         <div class="swiper-wrapper">
             <?php foreach ($images as $image): ?>
                 <div class="swiper-slide">
-                    <form action="page_serie.php" method="get">
+                    <form action="db-livre\page_serie.php" method="get">
                         <input type="hidden" name="search" value="<?= isset($image['titre']) ? htmlspecialchars($image['titre']) : '' ?>">
                         <button type="submit">
-                            <img src="<?= htmlspecialchars($image['image']) ?>" alt="Image de couverture">
+                            <img src="<?= "db-livre/" . htmlspecialchars($image['image']) ?>" alt="Image de couverture">
                         </button>
                     </form>
                 </div>

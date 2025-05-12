@@ -1,5 +1,5 @@
 <?php
-    include 'sql\db_sakura-scan.php';
+    include '..\sql\db_sakura-scan.php';
     session_start();
 
     if ($_SERVER["REQUEST_METHOD"] == "GET") {
@@ -34,7 +34,7 @@
 
             echo "Connexion réussie!";
             // Redirection vers la page de série
-            header("Location: espace_livre.php");
+            header("Location: ../espace_livre.php");
             exit();
         } else {
             echo "Série pas trouver.";

@@ -1,6 +1,6 @@
 <?php require_once('header&footer\header.php'); ?>
 
-<link rel="stylesheet" href="espace_user.css">
+<link rel="stylesheet" href="css\espace_user.css">
 <h1>Bienvenue dans votre espace utilisateur</h1>
 <section id="espace_user">
 

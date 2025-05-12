@@ -12,7 +12,7 @@ include 'header&footer\header.php';
     <body>
     <section id="présentation" >
         <div class="serie" id="image">
-            <img src="<?php echo isset($_SESSION['image']) ? htmlspecialchars($_SESSION['image']) : 'default-image.jpg'; ?>" alt="Couverture de la série">
+            <img src="<?php echo isset($_SESSION['image']) ? "db-livre/" . htmlspecialchars($_SESSION['image']) : 'default-image.jpg'; ?>" alt="Couverture de la série">
         </div>
         <div class="serie" id="description">
             <h1><?= isset($_SESSION['titre']) ? htmlspecialchars($_SESSION['titre']) : 'Titre non disponible'; ?></h1>

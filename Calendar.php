@@ -17,7 +17,7 @@ $images = $query->fetchAll(PDO::FETCH_ASSOC); ?>
                 <?php foreach ($images as $image): ?>
                     <?php if (isset($image['livre_sortie']) && $image['livre_sortie'] === $jour[0]): ?>
                         <div class="calendrier_slide">
-                            <img src="<?= htmlspecialchars($image['image']) ?>" alt="Image de couverture">
+                            <img src="<?= "db-livre/". htmlspecialchars($image['image']) ?>" alt="Image de couverture">
                         </div>
                     <?php endif; ?>
                 <?php endforeach; ?>
@@ -27,7 +27,7 @@ $images = $query->fetchAll(PDO::FETCH_ASSOC); ?>
                 <?php foreach ($images as $image): ?>
                     <?php if (isset($image['livre_sortie']) && $image['livre_sortie'] === $jour[1]): ?>
                         <div class="calendrier_slide">
-                            <img src="<?= htmlspecialchars($image['image']) ?>" alt="Image de couverture">
+                            <img src="<?="db-livre/". htmlspecialchars($image['image']) ?>" alt="Image de couverture">
                         </div>
                         <?php endif; ?>
                         
@@ -38,7 +38,7 @@ $images = $query->fetchAll(PDO::FETCH_ASSOC); ?>
                 <?php foreach ($images as $image): ?>
                     <?php if (isset($image['livre_sortie']) && $image['livre_sortie'] === $jour[2]): ?>
                         <div class="calendrier_slide">
-                            <img src="<?= htmlspecialchars($image['image']) ?>" alt="Image de couverture">
+                            <img src="<?="db-livre/". htmlspecialchars($image['image']) ?>" alt="Image de couverture">
                         </div>
                     <?php endif; ?>
                 <?php endforeach; ?>
@@ -48,7 +48,7 @@ $images = $query->fetchAll(PDO::FETCH_ASSOC); ?>
                 <?php foreach ($images as $image): ?>
                     <?php if (isset($image['livre_sortie']) && $image['livre_sortie'] === $jour[3]): ?>
                         <div class="calendrier_slide">
-                            <img src="<?= htmlspecialchars($image['image']) ?>" alt="Image de couverture">
+                            <img src="<?="db-livre/". htmlspecialchars($image['image']) ?>" alt="Image de couverture">
                         </div>
                     <?php endif; ?>
                 <?php endforeach; ?>
@@ -58,7 +58,7 @@ $images = $query->fetchAll(PDO::FETCH_ASSOC); ?>
             <?php foreach ($images as $image): ?>
                 <?php if (isset($image['livre_sortie']) && $image['livre_sortie'] === $jour[4]): ?>
                     <div class="calendrier_slide">
-                        <img src="<?= htmlspecialchars($image['image']) ?>" alt="Image de couverture">
+                        <img src="<?= "db-livre/".htmlspecialchars($image['image']) ?>" alt="Image de couverture">
                     </div>
                 <?php endif; ?>
             <?php endforeach; ?>
@@ -68,7 +68,7 @@ $images = $query->fetchAll(PDO::FETCH_ASSOC); ?>
             <?php foreach ($images as $image): ?>
                 <?php if (isset($image['livre_sortie']) && $image['livre_sortie'] === $jour[5]): ?>
                     <div class="calendrier_slide">
-                        <img src="<?= htmlspecialchars($image['image']) ?>" alt="Image de couverture">
+                        <img src="<?="db-livre/". htmlspecialchars($image['image']) ?>" alt="Image de couverture">
                     </div>
                 <?php endif; ?>
             <?php endforeach; ?>
@@ -78,7 +78,7 @@ $images = $query->fetchAll(PDO::FETCH_ASSOC); ?>
             <?php foreach ($images as $image): ?>
                 <?php if (isset($image['livre_sortie']) && $image['livre_sortie'] === $jour[6]): ?>
                     <div class="calendrier_slide">
-                        <img src="<?= htmlspecialchars($image['image']) ?>" alt="Image de couverture">
+                        <img src="<?="db-livre/". htmlspecialchars($image['image']) ?>" alt="Image de couverture">
                     </div>
                 <?php endif; ?>
             <?php endforeach; ?>
@@ -88,7 +88,7 @@ $images = $query->fetchAll(PDO::FETCH_ASSOC); ?>
             <?php foreach ($images as $image): ?>
                 <?php if (isset($image['livre_sortie']) && $image['livre_sortie'] === $jour[7]): ?>
                     <div class="calendrier_slide">
-                        <img src="<?= htmlspecialchars($image['image']) ?>" alt="Image de couverture">
+                        <img src="<?="db-livre/". htmlspecialchars($image['image']) ?>" alt="Image de couverture">
                     </div>
                 <?php endif; ?>
             <?php endforeach; ?>
@@ -130,6 +130,5 @@ $images = $query->fetchAll(PDO::FETCH_ASSOC); ?>
     width: 80%;
     height: auto;
     object-fit: cover;
-
 }
 </style>
