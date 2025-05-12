@@ -1,5 +1,5 @@
 <?php
-    include 'db_users.php'; // Inclure le fichier de connexion à la base de données
+    include 'sql\db_users.php'; // Inclure le fichier de connexion à la base de données
 
     // Initialiser la connexion à la base de données
     $mysqli = new mysqli("localhost", "root", "", "users");

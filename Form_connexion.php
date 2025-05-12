@@ -1,6 +1,4 @@
-<?php require_once('header.php'); ?>
-<!-- <link rel="stylesheet" href="index_style.css"> -->
-<link rel="stylesheet" href="Global-form.css">
+<?php require_once('header&footer\header.php'); ?>
 <!DOCTYPE html>
 <html lang="fr">
 <head>

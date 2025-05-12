@@ -6,7 +6,7 @@ $database = 'sakura_scan';
 
 mysqli_report(MYSQLI_REPORT_ERROR | MYSQLI_REPORT_STRICT);
 
-$mysqli = new mysqli("$hostname", "$username", "$password", "$database");// Check connection
+$mysqli = new mysqli("$hostname", "$username", "$password", "$database"); 
 if ($mysqli->connect_error) {
     exit("Connection failed: " . $mysqli->connect_error);
 }

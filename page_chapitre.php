@@ -1,5 +1,5 @@
-<?php include 'db_sakura-scan.php'; ?>
-<?php include 'header.php';?>
+<?php include 'sql\db_sakura-scan.php'; ?>
+<?php include 'header&footer\header.php';?>
  
 <?php
 $chemin = isset($_POST['chemin']) ? $_POST['chemin'] : null; // Récupérer le chemin d'accès du chapitre

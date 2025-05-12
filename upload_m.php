@@ -1,5 +1,5 @@
 <?php 
-include 'db_sakura-scan.php'; 
+include 'sql\db_sakura-scan.php'; 
 
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     if (isset($_POST['titre'])) {

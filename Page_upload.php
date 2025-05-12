@@ -1,5 +1,5 @@
-<?php require 'db_sakura-scan.php'; ?>
-<?php include 'header.php'; ?>
+<?php require 'sql\db_sakura-scan.php'; ?>
+<?php include 'header&footer\header.php'; ?>
 <?php
     $genres = ["Action","Aventure","Comédie","Drame","Fantastique","Horreur","Romance","Science-fiction","Autre","Système"]; 
     $types = ["manga", "manhwa", "manhua", "autre"];

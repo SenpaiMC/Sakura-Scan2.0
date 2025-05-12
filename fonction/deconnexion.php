@@ -2,6 +2,6 @@
     session_start();
     session_unset();
     session_destroy();
-    header("Location: form_connexion.php");
+    header("Location:Sakura-Scan2.0/Form_connexion.php");
     exit();
 ?>

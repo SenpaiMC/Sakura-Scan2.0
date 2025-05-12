@@ -1,6 +1,6 @@
 <?php
 // Inclure le fichier de connexion à la base de données
-include 'db_sakura-scan.php';
+include 'sql\db_sakura-scan.php';
 // Vérification de la table 'livres'
 try {
     $pdo->query("SELECT 1 FROM livres LIMIT 1");

@@ -1,7 +1,6 @@
-<?php require_once("header.php"); ?>
-<?php include("db_sakura-scan.php"); ?>
+<?php require_once("header&footer\header.php"); ?>
+<?php include("sql\db_sakura-scan.php"); ?>
 <?php $jour = ["Lundi", "Mardi", "Mercredi", "Jeudi", "Vendredi", "Samedi", "Dimanche", "Indéterminé"]; ?>
-<?php $jour1 = ["lundi", "mardi", "mercredi", "jeudi", "vendredi", "samedi", "dimanche", "Indéterminé"]; ?>
 <?php 
 $query = $pdo->query("SELECT * FROM livres WHERE image IS NOT NULL LIMIT 10");
 $images = $query->fetchAll(PDO::FETCH_ASSOC); ?>
@@ -93,24 +92,8 @@ $images = $query->fetchAll(PDO::FETCH_ASSOC); ?>
                     </div>
                 <?php endif; ?>
             <?php endforeach; ?>
-        <h1>Indéterminé</h1>
-        <div class="calendrier_contenue">
-            <?php foreach ($images as $image): ?>
-                <?php if (isset($image['livre_sortie']) && $image['livre_sortie'] === $jour[0]): ?>
-                    <form action="page_serie.php" method="get">
-                        <input type="hidden" name="search" value="<?= isset($image['titre']) ? htmlspecialchars($image['titre']) : '' ?>">
-                        <button type="submit">
-                            <img src="<?= htmlspecialchars($image['image']) ?>" alt="Image de couverture">
-                        </button>
-                <?php endif; ?>
-            <?php endforeach; ?>
-        </div>
 
-    
-</body>
-</html>
-
-<?php 
+<!-- <?php 
     $currentDay = $jour[date('N') - 1]; // Obtenir le jour actuel de la semaine
     foreach ($images as $image): 
         if (isset($image['livre_sortie']) && $image['livre_sortie'] === $currentDay): ?>
@@ -119,7 +102,11 @@ $images = $query->fetchAll(PDO::FETCH_ASSOC); ?>
             </div>
         <?php endif; 
     endforeach; 
-    ?>
+    ?> -->
+    
+</body>
+</html>
+
         
         <style>
 

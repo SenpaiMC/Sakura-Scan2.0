@@ -1,5 +1,5 @@
 <?php
-    include 'db_sakura-scan.php';
+    include 'sql\db_sakura-scan.php';
     session_start();
 
     if ($_SERVER["REQUEST_METHOD"] == "GET") {
@@ -43,7 +43,7 @@
 ?>
 
 <?php
-    include 'db_sakura-scan.php';
+    include 'sql\db_sakura-scan.php';
     session_start();
 
     $sql = "SELECT * FROM chapitres WHERE livre_id = ?";

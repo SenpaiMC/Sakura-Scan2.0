@@ -1,5 +1,5 @@
 <?php
-include 'header.php';
+include 'header&footer\header.php';
 ?>
 
 <!DOCTYPE html>
@@ -61,7 +61,7 @@ include 'header.php';
         </style>
         <h2>Chapitre</h2>
         <?php
-        include 'db_sakura-scan.php';
+        include 'sql\db_sakura-scan.php';
         // Récupérer les chapitres liés à l'ID de la session
         $query = "SELECT * FROM chapitres WHERE livre_id = ?";
         $stmt = $mysqli->prepare($query);

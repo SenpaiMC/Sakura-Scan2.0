@@ -1,6 +1,6 @@
 <?php
-include 'header.php'; // Inclure le fichier header.php pour le menu de navigation
-include 'db_sakura-scan.php'; // Inclure le fichier de connexion à la base de données
+include 'header&footer\header.php'; // Inclure le fichier header&footer\header.php pour le menu de navigation
+include 'sql\db_sakura-scan.php'; // Inclure le fichier de connexion à la base de données
 ?>
 
 <?php

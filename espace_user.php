@@ -1,4 +1,4 @@
-<?php require_once('header.php'); ?>
+<?php require_once('header&footer\header.php'); ?>
 
 <link rel="stylesheet" href="espace_user.css">
 <h1>Bienvenue dans votre espace utilisateur</h1>
@@ -17,4 +17,4 @@
     
 </section>
 
- <a href="deconnexion.php">Deconnexion</a>
+ <a href="fonction\deconnexion.php">Deconnexion</a>

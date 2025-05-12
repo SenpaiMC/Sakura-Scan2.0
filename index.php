@@ -1,5 +1,5 @@
-<?php require_once 'header.php'; ?>
-<?php include 'db_sakura-scan.php';
+<?php require_once 'header&footer\header.php'; ?>
+<?php include 'sql\db_sakura-scan.php';
 
 // Récupération des images de couverture
 $query = $pdo->query("SELECT * FROM livres WHERE image IS NOT NULL LIMIT 10");
@@ -17,7 +17,7 @@ $images = $query->fetchAll(PDO::FETCH_ASSOC);
         .swiper {
             margin-top: 3%;
             width: 90%;
-            height: 450px;
+            height: 550px;
         }
         .swiper-slide {
             display: flex;
@@ -27,7 +27,7 @@ $images = $query->fetchAll(PDO::FETCH_ASSOC);
         }
         
         .swiper-slide button{
-            width: 100%;
+            width: 80%;
             height: auto;
             border: none;
             background-color: #fff;
@@ -36,7 +36,7 @@ $images = $query->fetchAll(PDO::FETCH_ASSOC);
         }
 
         .swiper-slide img {
-            width: 70%;
+            width: 85%;
             height: auto;
         }
     </style>
