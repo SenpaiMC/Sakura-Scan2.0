@@ -5,7 +5,7 @@
 <section id="espace_user">
 
     <?php if (!empty($_SESSION['photo_profil'])): ?>
-        <img src="<?php echo htmlspecialchars($_SESSION['photo_profil']); ?>" alt="Photo de profil" width="150">
+        <img src="<?php echo "db-utilisateur/" . htmlspecialchars($_SESSION['photo_profil']); ?>" alt="Photo de profil" width="150">
     <?php else: ?>
         <p>Aucune photo de profil enregistrée.</p>
     <?php endif; ?>

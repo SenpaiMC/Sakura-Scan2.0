@@ -34,12 +34,12 @@
 
             <div class="logo-container" id="logo6"> 
                 <a href="espace_user.php">
-                    <img src="<?php echo isset($_SESSION['photo_profil']) ? htmlspecialchars($_SESSION['photo_profil']) : 'logo/default_profile.png'; ?>" alt="Photo de profil" >
+                    <img src="<?php echo isset($_SESSION['photo_profil']) ? "db-utilisateur/" . htmlspecialchars($_SESSION['photo_profil']) : 'logo/default_profile.png'; ?>" alt="Photo de profil" >
                 </a>
             </div>
 
             <div class="logo-container" id="logo7"> 
-                <a href="deconnexion.php"><img src="header&footer\logo\on_off.png" alt=""></a>
+                <a href="db-utilisateur\deconnexion.php"><img src="header&footer\logo\on_off.png" alt=""></a>
             </div>
         </div>
         <?php else : ?>
@@ -69,7 +69,7 @@
             </div>
 
             <div class="logo-container" id="logo7"> 
-                <a href="deconnexion.php"><img src="header&footer\logo\on_off.png" alt=""></a>
+                <a href="db-utilisateur\deconnexion.php"><img src="header&footer\logo\on_off.png" alt=""></a>
             </div>
         </div>
         <?php else : ?>

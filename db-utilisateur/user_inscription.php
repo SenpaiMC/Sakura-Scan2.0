@@ -1,5 +1,5 @@
 <?php
-include 'sql\db_users.php';
+include '../sql\db_users.php';
 session_start();
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
@@ -46,5 +46,5 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 ?>
 
 <br>
-<a href="Form_connexion.php">Retour à l'accueil pour se connecter ou s'inscrire</a>
+<a href="../Form_connexion.php">Retour à l'accueil pour se connecter ou s'inscrire</a>
 

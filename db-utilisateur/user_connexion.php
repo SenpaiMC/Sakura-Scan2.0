@@ -1,5 +1,5 @@
 <?php
-    include 'sql\db_users.php'; // Inclure le fichier de connexion à la base de données
+    include '../sql\db_users.php'; // Inclure le fichier de connexion à la base de données
 
     // Initialiser la connexion à la base de données
     $mysqli = new mysqli("localhost", "root", "", "users");
@@ -42,7 +42,7 @@
             
             echo "Connexion réussie!";
             // Redirection vers l'espace utilisateur après connexion
-            header("Location:espace_user.php");
+            header("Location:../espace_user.php");
             exit();
 
         // Vérification du mot de passe pour administrateur
@@ -52,7 +52,7 @@
             $_SESSION['admin_nom'] = $admin['nom'];
             $_SESSION['mot_de_passe'] = $admin['mot_de_passe'];
             // Redirection vers l'espace administrateur après connexion
-            header("Location:Page_upload.php");
+            header("Location:../Page_upload.php");
             exit();
         } else {
             echo "Nom d'utilisateur ou mot de passe incorrect.";

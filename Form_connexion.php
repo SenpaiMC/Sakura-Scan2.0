@@ -10,52 +10,47 @@
 <section id="carousel">
     <div class="carousel-container">
         <div class="carousel-slide">
-        <h2>Connexion</h2>
-            <form action="user_connexion.php" method="POST">
-                <div class="input-groupe">
-                <!-- Pseudo -->
-                <label for="login-username"></label>
-                <input type="text" id="login-username" name="nom" placeholder="Pseudo" required>
+            <h2>Connexion</h2>
+            <form action="db-utilisateur\user_connexion.php" method="POST">
+                    <div class="input-groupe">
+                    <!-- Pseudo -->
+                    <label for="login-username"></label>
+                    <input type="text" id="login-username" name="nom" placeholder="Pseudo" required>
             </div>
             <div class="input-groupe">
-                <!-- Mot de passe -->
-                <label for="login-password"></label>
-                <input type="password" id="login-password" name="mot_de_passe" placeholder="Mot de passe" required>
+                    <!-- Mot de passe -->
+                    <label for="login-password"></label>
+                    <input type="password" id="login-password" name="mot_de_passe" placeholder="Mot de passe" required>
             </div>
             <button type="submit">Se connecter</button>
-        </form>
-        <button onclick="moveCarousel(1)" style="background: none; border: none; color: white; font-size: 16px; cursor: pointer;">Pas de compte ? S'inscrire</button>
+            </form>
+            <button onclick="moveCarousel(1)" style="background: none; border: none; color: white; font-size: 16px; cursor: pointer;">Pas de compte ? S'inscrire</button>
         </div>
         <div class="carousel-slide">
-        <h2>Création de compte</h2>
-        <form action="user_inscription.php" method="POST" enctype="multipart/form-data">
-            <div class="input-groupe">
-                <!-- Pseudo -->
-                <label for="register-username"></label>
-                <input type="text" id="register-username" name="nom" placeholder="Pseudo" required>
-            </div>
-            <div class="input-groupe">
-                <!-- Mot de passe -->
-                <label for="register-password"></label>
-                <input type="mot_de_passe" id="register-password" name="mot_de_passe" placeholder="Mot de passe" required>
-            </div>
+            <h2>Création de compte</h2>
+            <form action="db-utilisateur\user_inscription.php" method="POST" enctype="multipart/form-data">
+                <div class="input-groupe">
+                    <!-- Pseudo -->
+                    <label for="register-username"></label>
+                    <input type="text" id="register-username" name="nom" placeholder="Pseudo" required>
+                </div>
+                <div class="input-groupe">
+                    <!-- Mot de passe -->
+                    <label for="register-password"></label>
+                    <input type="mot_de_passe" id="register-password" name="mot_de_passe" placeholder="Mot de passe" required>
+                </div>
 
-            <div class="input-groupe">
-                <!-- Photo de profil -->
-                <label for="photo_profil"></label>
-                <input type="file" id="fileInput" name="photo_profil" onchange="previewImage()" required>
-                <div id="previewImageContainer"></div>
-            </div>
-            <button type="submit">S'inscrire</button>
-        </form>
-        <button onclick="moveCarousel(-1)" style="background: none; border: none; color: white; font-size: 16px; cursor: pointer;">Déjà inscrit ? Se conecter </button>
-            </div>
+                <div class="input-groupe">
+                    <!-- Photo de profil -->
+                    <label for="photo_profil"></label>
+                    <input type="file" id="fileInput" name="photo_profil" onchange="previewImage()" required>
+                    <div id="previewImageContainer"></div>
+                </div>
+                <button type="submit">S'inscrire</button>
+            </form>
+            <button onclick="moveCarousel(-1)" style="background: none; border: none; color: white; font-size: 16px; cursor: pointer;">Déjà inscrit ? Se conecter </button>
+        </div>
 
-            <section id="carousel">
-    <div class="carousel-container">
-        <div class="carousel-slide">
-    <!-- <button class="carousel-prev" onclick="moveCarousel(-1)">&#10094;</button>
-    <button class="carousel-next" onclick="moveCarousel(1)">&#10095;</button> -->
 </section>
 
 

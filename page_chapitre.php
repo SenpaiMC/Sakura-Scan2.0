@@ -31,7 +31,6 @@ $images = array_map(function($file) use ($directory) {
 <body>
     <h1> <?php echo htmlspecialchars($numero); ?> </h1>
 <?php $type = ["manhwa","manga"]; ?>
-<?php $type2 = "manga"; ?>
 <?php if (isset($_SESSION['type']) && $_SESSION['type'] == $type[1]): ?>
     <p>Nombre d'images : <?php echo count($images); ?></p>
 <section id="carousel">
@@ -40,7 +39,8 @@ $images = array_map(function($file) use ($directory) {
     </div>
     <button id="prevBtn" class="carousel-prev">Précédent</button>
     <button id="nextBtn" class="carousel-next">Suivant</button>
-
+    </div>
+    
     <style>
         .carousel-next-chapter {
             position: absolute;
@@ -53,12 +53,12 @@ $images = array_map(function($file) use ($directory) {
             cursor: pointer;
         }
         </style>
-                    </div>';
 </section>
 
 <?php elseif (isset($_SESSION['type']) && $_SESSION['type'] == $type[0]): ?>
+
     <p>Nombre d'images : <?php echo count($images); ?></p>
-    <?php foreach ($images as $image): ?>               
+    <?php foreach ($images as $image): ?>
         <div id="slide">
             <img src="<?= htmlspecialchars($image) ?>" alt="Image de couverture">
         </div>
