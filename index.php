@@ -1,4 +1,4 @@
-<?php require_once 'header&footer\header.php'; ?>
+<?php require_once("header&footer/header.php"); ?>
 <?php include 'sql\db_sakura-scan.php';
 
 // Récupération des images de couverture
@@ -19,6 +19,7 @@ $images = $query->fetchAll(PDO::FETCH_ASSOC);
     <!-- Slider main container -->
     <div class="swiper">
         <div class="swiper-wrapper">
+            <!-- recupère maximum 10 images et les affiche -->
             <?php foreach ($images as $image): ?>
                 <div class="swiper-slide">
                     <form action="db-livre/fonction_search.php" method="get">

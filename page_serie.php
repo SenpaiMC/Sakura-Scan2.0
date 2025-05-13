@@ -1,5 +1,5 @@
 <?php
-include_once 'header&footer/header.php';
+require_once("header&footer/header.php"); 
 include_once 'sql/db_sakura-scan.php';
 ?>
 <!DOCTYPE html>
@@ -22,7 +22,7 @@ $sql = "SELECT * FROM livres"; // Remplacez 'chemin_image' et 'images' par vos n
 $stmt = $pdo->query($sql);
 
 // Affichage des images
-echo '<div style="display: flex; flex-wrap: wrap;">';
+echo '<div>';
 while ($row = $stmt->fetch(PDO::FETCH_ASSOC)) {
     $cheminImage = htmlspecialchars($row['image']);
     $titre = htmlspecialchars($row['titre']);
@@ -39,6 +39,6 @@ while ($row = $stmt->fetch(PDO::FETCH_ASSOC)) {
 }
 echo '</div>';
 ?>
-    
 </body>
 </html>
+<?php require_once("header&footer/footer.php"); ?> 

@@ -1,5 +1,5 @@
 <?php include 'sql\db_sakura-scan.php'; ?>
-<?php include 'header&footer\header.php';?>
+<?php require_once("header&footer/header.php"); ?>
 <?php
 $chemin = isset($_GET['chemin']) ? $_GET['chemin'] : null; // Récupérer le chemin d'accès du chapitre
 $numero = isset($_GET['numero']) && is_numeric($_GET['numero']) ? (int)$_GET['numero'] : 1; // Récupérer le numéro du chapitre ou définir par défaut à 1
@@ -202,6 +202,6 @@ $images = array_map(function($file) use ($directory) {
         right: -50px;
     }
     </style>
-    <?php include 'header&footer/footer.php'; ?>
+<?php require_once("header&footer/footer.php"); ?>
 </body>
 </html>

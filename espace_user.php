@@ -25,7 +25,6 @@
                         <?php endif; ?>
                         
                     </section>
-                        
-                            
+<?php require_once("header&footer/footer.php"); ?>                       
 </body>
 </html>

@@ -1,6 +1,4 @@
-<?php
-include 'header&footer\header.php';
-?>
+<?php require_once("header&footer/header.php"); ?>
 
 <!DOCTYPE html>
 <html lang="fr">
@@ -80,6 +78,7 @@ include 'header&footer\header.php';
             $_SESSION['chemin'] = $chapitres ;// Récupérer le chemin d'accès
         } else {
             echo "Aucun chapitre trouvé pour cet ID.";
+            require_once("header&footer/footer.php"); 
             exit;
         }
         ?>
@@ -96,8 +95,9 @@ include 'header&footer\header.php';
                     </div>';
                 }
             }
-                ?>
+            ?>
     </section>
+    <?php require_once("header&footer/footer.php"); ?>
     <style>
         #chapitre {
             width: 90%;
@@ -129,6 +129,5 @@ include 'header&footer\header.php';
             background-color:rgb(46, 45, 45);
         }
     </style>
-
 </body>
 </html>
