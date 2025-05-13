@@ -1,6 +1,5 @@
 <?php include 'sql\db_sakura-scan.php'; ?>
 <?php include 'header&footer\header.php';?>
- 
 <?php
 $chemin = isset($_GET['chemin']) ? $_GET['chemin'] : null; // Récupérer le chemin d'accès du chapitre
 $numero = isset($_GET['numero']) && is_numeric($_GET['numero']) ? (int)$_GET['numero'] : 1; // Récupérer le numéro du chapitre ou définir par défaut à 1
@@ -59,15 +58,38 @@ $images = array_map(function($file) use ($directory) {
 <?php elseif (isset($_SESSION['type']) && $_SESSION['type'] == $type[0]): ?>
     
     <p>Nombre d'images : <?php echo count($images); ?></p>
+    <?= '<input type="button" value="Retour à la page" onclick="window.location.href=\'profil_livre.php\'">'; ?>
+    
+
+    <!-- Permet de partir au chapitre suivant -->
         <form action="chapitre.php" method="get">
             <input type="hidden" name="chemin" value="<?php echo preg_replace_callback('/(\d+)$/', function($matches) { return $matches[1] + 1; }, htmlspecialchars($chemin)); ?>">
             <input type="hidden" name="numero" value="<?php echo htmlspecialchars($numero + 1); ?>">
-            <input type="submit" value="Chapitre suivant">
+            <!-- Permet de partir à la page de présentation du livre si il n'y a pas de chapitre suivant -->
+            <?php
+            $nextChapterPath = preg_replace_callback('/(\d+)$/', function($matches) { return $matches[1] + 1; }, htmlspecialchars($chemin));
+            if (!is_dir($nextChapterPath)) {
+                echo '';
+            } else {
+                echo '<input type="submit" value="Chapitre suivant">';
+            }
+            ?>
+
         </form>
+        <!-- Permet de revenir au chapitre précédent -->
         <form action="chapitre.php" method="get">
             <input type="hidden" name="chemin" value="<?php echo preg_replace_callback('/(\d+)$/', function($matches) { return $matches[1] - 1; }, htmlspecialchars($chemin)); ?>">
             <input type="hidden" name="numero" value="<?php echo htmlspecialchars($numero - 1); ?>">
-            <input type="submit" value="Chapitre précédent">
+            <!-- Permet d'enlever le bouton chapitre précédent si il n'existe pas -->
+            <?php
+            $préChapterPath = preg_replace_callback('/(\d+)$/', function($matches) { return $matches[1] - 1; }, htmlspecialchars($chemin));
+            if (!is_dir($préChapterPath)) {
+                echo '';
+            } else {
+                echo '<input type="submit" value="Chapitre précédent">';
+            }
+            ?>
+            <!-- <input type="submit" value="Chapitre précédent"> -->
         </form>
     <?php foreach ($images as $image): ?>
         <div id="slide">

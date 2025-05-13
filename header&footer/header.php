@@ -9,7 +9,8 @@
 
     
 
-    <title>Mon site</title>
+    <title>Sakura scan</title>
+    <link rel="icon" href="header&footer\logo\logo sakura_scan.png" type="image/png" >
 </head>
 <body>
 
@@ -30,7 +31,7 @@
             </div>
 
             <div class="logo-container" id="logo4"> 
-                <a href="page_connexion.php"><img src="header&footer\logo\Serie.png" alt=""></a>
+                <a href="page_serie.php"><img src="header&footer\logo\Serie.png" alt=""></a>
             </div>
 
             <div class="logo-container" id="logo6"> 
@@ -62,7 +63,7 @@
             </div>
 
             <div class="logo-container" id="logo4"> 
-                <a href="page_connexion.php"><img src="header&footer\logo\Serie.png" alt=""></a>
+                <a href="page_serie.php"><img src="header&footer\logo\Serie.png" alt=""></a>
             </div>
 
             <div class="logo-container" id="logo5"> 
@@ -92,7 +93,7 @@
             </div>
 
             <div class="logo-container" id="logo4"> 
-                <a href="page_connexion.php"><img src="header&footer\logo\Serie.png" alt="serie"></a>
+                <a href="page_serie.php"><img src="header&footer\logo\Serie.png" alt="serie"></a>
             </div>
 
             <div class="logo-container" id="logo5"> 

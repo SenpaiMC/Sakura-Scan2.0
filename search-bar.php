@@ -62,6 +62,9 @@ if (isset($_GET['query'])) {
                                 img.src = item.image; // Supposons que la requête retourne un champ `cover` depuis la base de données
                                 img.alt = item.titre; // Utiliser le titre comme texte alternatif   
                                 img.style.width = '50px';
+                                img.style.border = '2px solid black';
+                                img.style.marginRight = '10px';
+                                img.style.borderRadius = '4px';
                                 img.style.height = 'auto';
                                 img.style.objectFit = 'cover';
 
@@ -115,14 +118,17 @@ if (isset($_GET['query'])) {
 
             #suggestions {
                 top: 101%;
-                border: 1px solid #ccc;
+                border: none;
                 overflow-y: auto;
                 position: absolute;
                 background: white;
+                font-size: large;
                 width: 99%;
                 z-index: 1000;
             }
             #suggestions div {
+                border: 2px solid  #4f6172;
+                border-radius: 4px;
                 padding: 10px;
                 cursor: pointer;
             }
