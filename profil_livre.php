@@ -12,7 +12,7 @@ include 'header&footer\header.php';
     <body>
     <section id="présentation" >
         <div class="serie" id="image">
-            <img src="<?php echo isset($_SESSION['image']) ? "db-livre/" . htmlspecialchars($_SESSION['image']) : 'default-image.jpg'; ?>" alt="Couverture de la série">
+            <img src="<?php echo isset($_SESSION['image']) ? htmlspecialchars($_SESSION['image']) : 'default-image.jpg'; ?>" alt="Couverture de la série">
         </div>
         <div class="serie" id="description">
             <h1><?= isset($_SESSION['titre']) ? htmlspecialchars($_SESSION['titre']) : 'Titre non disponible'; ?></h1>
@@ -88,7 +88,7 @@ include 'header&footer\header.php';
             foreach ($_SESSION['chemin'] as $chemin) {
                 if (is_array($chemin) && isset($chemin['chemin']) && isset($chemin['numero'])) {
                     echo '<div class="chapitre">
-                    <form action="page_chapitre.php" method="POST">
+                    <form action="chapitre.php" method="get">
                     <input type="hidden" name="chemin" value="' . htmlspecialchars($chemin['chemin']) . '">
                     <input type="hidden" name="numero" value="' . htmlspecialchars($chemin['numero']) . '">
                     <input type="submit" value="Chapitre ' . htmlspecialchars($chemin['numero']) . '">

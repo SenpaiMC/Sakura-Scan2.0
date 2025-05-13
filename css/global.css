@@ -1,0 +1,145 @@
+/* index.php */
+/* CSS de la page index */
+.swiper {
+    width: 90%;
+    height: 550px;
+    margin-top: 3%;
+}
+.swiper-slide {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 20px;
+}
+
+.swiper-slide button{
+    width: 80%;
+    height: auto;
+    border: none;
+    background-color: transparent;
+    cursor: pointer;
+                
+}
+            
+.swiper-slide img {
+    width: 85%;
+    height: auto;
+}
+
+#navigation {
+    width: 100%;
+    margin-top: 50px;
+    /* transform: translateY(-50%); */
+    background-color: #fff;
+}
+.swiper-button-next, .swiper-button-prev {
+    color: #fff;
+    padding: 10px;
+}
+.swiper-button-next:hover, .swiper-button-prev:hover {
+    background-color: rgba(0, 0, 0, 0.8);
+}
+
+/* Fin CSS de la page index */
+
+/* Calendar.php */
+/* CSS de la page du calendrier */
+
+.calendrier_contenue {
+    width: 100%;
+    height: auto;
+    display: grid;
+    grid-template-columns: 25% 25% 25% 25%;
+    justify-content: space-around;
+    /* background-color: gray; */
+}
+
+.calendrier_slide {
+    width: 100%;
+    height: auto;
+    /* background-color: blue; */
+    display: flex;
+    justify-content: center;
+}
+.calendrier_slide img {
+    width: 80%;
+    height: auto;
+    object-fit: cover;
+}
+
+/*Fin CSS de la page du calendrier */
+
+/* CSS de la page de connexion et inscription */
+#carousel {
+    position: relative;
+    width: 100%;
+    max-width: 550px;
+    height: 600px;
+    margin: 0 auto;
+    margin-top: 1%;
+    overflow: hidden;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    background-color: aquamarine;
+}
+
+.carousel-container {
+    display: flex;
+    flex-direction: row;
+}
+
+.carousel-slide {
+    width: 100%;
+        height: 600px;
+        flex: 0 0 100%;
+        display: none;
+        background-color:purple;
+        color: white;
+        align-content: center;
+        text-align: center;
+        padding: 20px;
+        box-sizing: border-box;
+    }
+    
+    .carousel-slide:last-child {
+        background-color:rgb(66, 24, 48);
+    }
+    .carousel-slide input {
+        width: 60%;
+        height: 30px;
+        padding: 10px;
+        margin: 20px 0;
+        align-items: center;
+    }
+    .carousel-slide button {
+        background-color:rgb(150, 71, 134);
+        width: 40%;
+        padding: 10px;
+        margin: 10px 0;
+        align-items: center;
+        border: none;
+        cursor: pointer;
+    }
+    
+    .carousel-slide button:hover {
+        background-color:rgb(151, 80, 151);
+    }
+    
+    .carousel-prev, .carousel-next {
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        background-color: rgba(0, 0, 0, 0.5);
+        color: white;
+        border: none;
+        padding: 10px;
+        cursor: pointer;
+    }
+    
+    .carousel-prev {
+        left: 10px;
+    }
+    
+    .carousel-next {
+        right: 10px;
+    }

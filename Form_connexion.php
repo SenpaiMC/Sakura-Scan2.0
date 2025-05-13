@@ -4,6 +4,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css\global.css">
+
     <title>profil</title>
 </head>
 <body>
@@ -69,81 +71,6 @@
         slide.style.display = index === 0 ? 'block' : 'none';
     });
 </script>
-
-<style>
-    #carousel {
-        position: relative;
-        width: 100%;
-        max-width: 550px;
-        height: 600px;
-        margin: 0 auto;
-        margin-top: 1%;
-        overflow: hidden;
-        border-radius: 10px;
-        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-        background-color: aquamarine;
-    }
-
-    .carousel-container {
-        display: flex;
-        flex-direction: row;
-    }
-    
-    .carousel-slide {
-        width: 100%;
-        height: 600px;
-        flex: 0 0 100%;
-        display: none;
-        background-color:purple;
-        color: white;
-        align-content: center;
-        text-align: center;
-        padding: 20px;
-        box-sizing: border-box;
-    }
-
-    .carousel-slide:last-child {
-        background-color:rgb(66, 24, 48);
-    }
-    .carousel-slide input {
-        width: 60%;
-        height: 30px;
-        padding: 10px;
-        margin: 20px 0;
-        align-items: center;
-    }
-    .carousel-slide button {
-        background-color:rgb(150, 71, 134);
-        width: 40%;
-        padding: 10px;
-        margin: 10px 0;
-        align-items: center;
-        border: none;
-        cursor: pointer;
-    }
-
-    .carousel-slide button:hover {
-        background-color:rgb(151, 80, 151);
-    }
-
-    .carousel-prev, .carousel-next {
-        position: absolute;
-        top: 50%;
-        transform: translateY(-50%);
-        background-color: rgba(0, 0, 0, 0.5);
-        color: white;
-        border: none;
-        padding: 10px;
-        cursor: pointer;
-    }
-
-    .carousel-prev {
-        left: 10px;
-    }
-
-    .carousel-next {
-        right: 10px;
-    }
-</style>
+<?php require_once("header&footer/footer.php"); ?>
 </body>
 </html>

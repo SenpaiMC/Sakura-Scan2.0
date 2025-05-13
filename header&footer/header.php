@@ -6,6 +6,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="header&footer/header.css">
+
     
 
     <title>Mon site</title>
@@ -21,7 +22,7 @@
             </div>
 
             <div class="logo-container" id="logo2"> 
-                    <?php include 'header&footer\search-bar.php'; ?>
+                    <?php include 'search-bar.php'; ?>
             </div>
 
             <div class="logo-container" id="logo3"> 
@@ -83,7 +84,7 @@
             </div>
 
             <div class="logo-container" id="logo2"> 
-                    <?php include 'header&footer\search-bar.php'; ?>
+                    <?php include 'search-bar.php'; ?>
             </div>
 
             <div class="logo-container" id="logo3"> 

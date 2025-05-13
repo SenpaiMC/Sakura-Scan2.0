@@ -1,6 +1,6 @@
+<?php include './sql/db_sakura-scan.php'; ?>
 <?php
 // Inclure le fichier de connexion à la base de données
-include 'sql\db_sakura-scan.php';
 // Vérification de la table 'livres'
 try {
     $pdo->query("SELECT 1 FROM livres LIMIT 1");
@@ -29,7 +29,7 @@ if (isset($_GET['query'])) {
         function submitFormWithSuggestion(itemtitre) {
     const form = document.createElement('form');
     form.method = 'GET'; // Ou 'POST' selon vos besoins
-    form.action = 'page_serie.php'; // Remplacez par l'URL où vous voulez envoyer les données
+    form.action = 'db-livre/fonction_search.php'; // Remplacez par l'URL où vous voulez envoyer les données
     
     const input = document.createElement('input');
     input.type = 'text';
@@ -88,7 +88,7 @@ if (isset($_GET['query'])) {
         </script>
 </head>
 <body>
-    <form action="page_serie.php" method="get">
+    <form action="db-livre/fonction_search.php" method="get">
     <!-- <h1>Recherche de Mangas et Webtoons</h1> -->
     <input type="text" id="search" name="search" onkeyup="searchSuggestions()" placeholder="Rechercher..." autocomplete="off" />
     <div id="suggestions"></div>

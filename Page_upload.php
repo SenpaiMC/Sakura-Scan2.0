@@ -20,7 +20,7 @@
 <section><h1>Partie Manga</h1></section>
     <section id="manga" class="page1">
         <div class="mangas" >
-            <form action="upload_m.php" method="post" enctype="multipart/form-data">
+            <form action="db-livre\upload_livre.php" method="post" enctype="multipart/form-data">
                 <h2>Déposer un Manga</h2>
                 <label for="titre">Titre du Manga:</label>
                 <input type="text" id="titre" name="titre" required><br><br>
@@ -68,7 +68,7 @@
                 </form>
             </div>
             <div class="mangas">
-                <form action="upload_m.php" method="post">
+                <form action="db-livre\upload_livre.php" method="post">
                     <h2>Déposer un Chapitre</h2>
                     <label for="livre_id">Id du manga :</label>
                     <input type="text" id="livre_id" name="livre_id" required><br><br>
@@ -99,11 +99,12 @@
                     echo "<td>" . htmlspecialchars($row['id'], ENT_QUOTES, 'UTF-8') . "</td>";
                     echo "<td>" . htmlspecialchars($row['titre'], ENT_QUOTES, 'UTF-8') . "</td>";
                     echo "<td>" . htmlspecialchars($row['type'], ENT_QUOTES, 'UTF-8') . "</td>";
-                    echo "<td><img src='" . "db-livre/". htmlspecialchars($row['image'], ENT_QUOTES, 'UTF-8') . "' alt='Image' width='70'></td>";
+                    echo "<td><img src='". htmlspecialchars($row['image'], ENT_QUOTES, 'UTF-8') . "' alt='Image' width='70'></td>";
                     echo "</tr>";
                 }
                 ?>
             </table>
         </div>
+        <?php require_once("header&footer/footer.php"); ?>
 </body>
 </html>

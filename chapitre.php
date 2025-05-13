@@ -2,10 +2,10 @@
 <?php include 'header&footer\header.php';?>
  
 <?php
-$chemin = isset($_POST['chemin']) ? $_POST['chemin'] : null; // Récupérer le chemin d'accès du chapitre
-$numero = isset($_POST['numero']) && is_numeric($_POST['numero']) ? (int)$_POST['numero'] : 1; // Récupérer le numéro du chapitre ou définir par défaut à 1
+$chemin = isset($_GET['chemin']) ? $_GET['chemin'] : null; // Récupérer le chemin d'accès du chapitre
+$numero = isset($_GET['numero']) && is_numeric($_GET['numero']) ? (int)$_GET['numero'] : 1; // Récupérer le numéro du chapitre ou définir par défaut à 1
 // Configuration
-$directory = "db-livre/" . $chemin . '/'; // Dossier contenant les images des mangas
+$directory = $chemin . '/'; // Dossier contenant les images des mangas
 
 // Récupérer toutes les images du répertoire et les trier par ordre croissant
 $images = [];
@@ -33,6 +33,7 @@ $images = array_map(function($file) use ($directory) {
 <?php $type = ["manhwa","manga"]; ?>
 <?php if (isset($_SESSION['type']) && $_SESSION['type'] == $type[1]): ?>
     <p>Nombre d'images : <?php echo count($images); ?></p>
+    <button id="nextChapterBtn" class="carousel-next-chapter">Chapitre suivant</button>
 <section id="carousel">
     <div class="carousel-slide">
         <img id="mangaPage" src="<?php echo !empty($images) ? htmlspecialchars($images[0]) : ''; ?>" alt="Page de Manga">
@@ -56,8 +57,18 @@ $images = array_map(function($file) use ($directory) {
 </section>
 
 <?php elseif (isset($_SESSION['type']) && $_SESSION['type'] == $type[0]): ?>
-
+    
     <p>Nombre d'images : <?php echo count($images); ?></p>
+        <form action="chapitre.php" method="get">
+            <input type="hidden" name="chemin" value="<?php echo preg_replace_callback('/(\d+)$/', function($matches) { return $matches[1] + 1; }, htmlspecialchars($chemin)); ?>">
+            <input type="hidden" name="numero" value="<?php echo htmlspecialchars($numero + 1); ?>">
+            <input type="submit" value="Chapitre suivant">
+        </form>
+        <form action="chapitre.php" method="get">
+            <input type="hidden" name="chemin" value="<?php echo preg_replace_callback('/(\d+)$/', function($matches) { return $matches[1] - 1; }, htmlspecialchars($chemin)); ?>">
+            <input type="hidden" name="numero" value="<?php echo htmlspecialchars($numero - 1); ?>">
+            <input type="submit" value="Chapitre précédent">
+        </form>
     <?php foreach ($images as $image): ?>
         <div id="slide">
             <img src="<?= htmlspecialchars($image) ?>" alt="Image de couverture">
@@ -169,5 +180,6 @@ $images = array_map(function($file) use ($directory) {
         right: -50px;
     }
     </style>
+    <?php include 'header&footer/footer.php'; ?>
 </body>
 </html>
