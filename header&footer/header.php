@@ -55,7 +55,7 @@
             </div>
 
             <div class="logo-container" id="logo2"> 
-                    <?php include 'header&footer\search-bar.php'; ?>
+                    <?php include 'search-bar.php'; ?>
             </div>
 
             <div class="logo-container" id="logo3"> 

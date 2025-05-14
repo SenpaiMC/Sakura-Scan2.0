@@ -31,7 +31,7 @@ header {
     justify-content: center;
 }
 #logo6 img {
-        width: 80PX;
+        width: 80px;
         height: 80px;
         border-radius: 50%;
         object-fit: cover;
@@ -62,4 +62,15 @@ header {
     transition: transform 0.5s ease-in-out;
     filter: brightness(0.7);
 
+}
+
+@media screen and (max-width: 850px) {
+#logo6 img {
+        width: 30px;
+        height: 30px;
+        /* border-radius: 50%;
+        object-fit: cover;
+        border: 2px solid #fff;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.5); */
+}
 }

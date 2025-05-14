@@ -26,7 +26,7 @@ echo '<div>';
 while ($row = $stmt->fetch(PDO::FETCH_ASSOC)) {
     $cheminImage = htmlspecialchars($row['image']);
     $titre = htmlspecialchars($row['titre']);
-    echo '<div style="margin: 10px;">';
+    echo '<div style="margin: 10px; display: inline-block; text-align: center;">';
     echo '<form action="db-livre/fonction_search.php" method="get">';
     echo '<input type="hidden" name="search" value="' . $cheminImage . '">';
     echo '<input type="hidden" name="search" value="' . $titre . '">';

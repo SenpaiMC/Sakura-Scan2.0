@@ -22,10 +22,10 @@
         <div class="mangas" >
             <form action="db-livre\upload_livre.php" method="post" enctype="multipart/form-data">
                 <h2>Déposer un Manga</h2>
-                <label for="titre">Titre du Manga:</label>
+                <label for="titre">Titre du Manga<br></label>
                 <input type="text" id="titre" name="titre" required><br><br>
 
-                <label for="auteurs">Auteurs:</label>
+                <label for="auteurs">Auteurs <br></label>
                 <input type="text" id="auteurs" name="auteurs" required><br><br>
 
                 <label for="situation">Situation:</label>
@@ -59,7 +59,7 @@
                     </select> <br><br>
                     
                     <label for="description">Description:</label><br>
-                    <textarea id="description" name="description" rows="8" cols="60" required></textarea><br><br>
+                    <textarea id="description" name="description" required></textarea><br><br>
                     
                     <label for="image">Image</label>
                     <input type="file" id="image" name="image" accept=".jpg, .jpeg, .png, .gif" multiple required><br><br>
