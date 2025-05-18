@@ -1,5 +1,5 @@
 <?php 
-include 'sql\db_sakura-scan.php'; 
+include '..\sql\db_sakura-scan.php'; 
 
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     if (isset($_POST['titre'])) {
@@ -49,6 +49,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         $stmt->execute([$livre_id, $numero, $chemin]);
 
         header("Location: ../Page_upload.php"); // Redirection après l'upload
+        echo "Chapitre déposé avec succès !";
         exit;
     } else {
         echo "Données non valides.";

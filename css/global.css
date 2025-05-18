@@ -13,7 +13,7 @@
 }
 
 .swiper-slide button{
-    width: 80%;
+    width: 100%;
     height: auto;
     border: none;
     background-color: transparent;
@@ -22,7 +22,7 @@
 }
             
 .swiper-slide img {
-    width: 85%;
+    width: 90%;
     height: auto;
 }
 
