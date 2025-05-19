@@ -61,12 +61,6 @@ if (isset($_GET['query'])) {
                     const img = document.createElement('img');
                                 img.src = item.image; // Supposons que la requête retourne un champ `cover` depuis la base de données
                                 img.alt = item.titre; // Utiliser le titre comme texte alternatif   
-                                img.style.width = '50px';
-                                img.style.border = '2px solid black';
-                                img.style.marginRight = '10px';
-                                img.style.borderRadius = '4px';
-                                img.style.height = 'auto';
-                                img.style.objectFit = 'cover';
 
                     const span = document.createElement('span');
                     span.textContent = item.titre;
@@ -133,6 +127,43 @@ if (isset($_GET['query'])) {
                 cursor: pointer;
             }
             #suggestions div:hover {
-                background-color: #f0f0f0;
+                background-color:rgb(126, 121, 121);
+            }
+            
+            #suggestions div img {
+                width :50px;
+                height: auto;
+                margin-right: 10px;
+                border-radius: 4px;
+                object-fit: cover;
+
+            }
+            #suggestions div span{
+                font-size: 20px;
+                color: #333;
+            }
+        
+            @media screen and (max-width: 850px) {
+                #search {
+                    width: 100%;
+                    padding: 10px;
+                    border-radius: 4px;
+                    box-sizing: border-box;
+                }
+                #search:focus {
+                    border-color: #007BFF;
+                    outline: none;
+                    width: 200%;
+                }
+                #suggestions {
+                    width: 200%;
+                }
+                /* #suggestions div {
+                    width: 100%;
+                } */
+                #suggestions div img {
+                    width: 30px;
+                    height: auto;
+                }
             }
         </style>

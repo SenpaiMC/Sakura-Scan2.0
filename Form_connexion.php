@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="css\global.css">
+    <link rel="stylesheet" href="css\Form_connexion.css">
     
     <title>profil</title>
 </head>
@@ -51,7 +51,7 @@
                     <!-- Photo de profil -->
                     <label for="photo_profil"></label>
                     <input type="file" id="fileInput" name="photo_profil" onchange="previewImage()" required>
-                    <div id="previewImageContainer"></div>
+                    <div id="vueimage"></div>
                 </div>
                 <button type="submit">S'inscrire</button>
             </form>
@@ -84,7 +84,7 @@ slides.forEach((slide, index) => {
     function previewImage() {
         const fileInput = document.getElementById('fileInput');
         const file = fileInput.files[0];
-        const imagePreviewContainer = document.getElementById('previewImageContainer');
+        const voirimage = document.getElementById('vueimage');
         
         if(file.type.match('image.*')){
             const reader = new FileReader();
@@ -94,13 +94,11 @@ slides.forEach((slide, index) => {
                 const image = new Image();
                 
                 image.addEventListener('load', function() {
-                    imagePreviewContainer.innerHTML = ''; // Vider le conteneur au cas où il y aurait déjà des images.
-                    imagePreviewContainer.appendChild(image);
+                    voirimage.innerHTML = ''; // Vider le conteneur au cas où il y aurait déjà des images.
+                    voirimage.appendChild(image);
                 });
                 
                 image.src = imageUrl;
-                image.style.width = '100px'; // Indiquez les dimensions souhaitées ici.
-                image.style.height = 'auto'; // Vous pouvez également utiliser "px" si vous voulez spécifier une hauteur.
             });
             
             reader.readAsDataURL(file);

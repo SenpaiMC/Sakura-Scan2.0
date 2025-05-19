@@ -5,62 +5,26 @@
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="css/profil_livre.css">
         <title>profil</title>
     </head>
     <body>
-    <section id="présentation" >
-        <div class="serie" id="image">
+        <!-- Prsentation du manga,manhwa,etc. -->
+    <section id="presentations" >
+        <div class="presentation" id="cover">
             <img src="<?php echo isset($_SESSION['image']) ? htmlspecialchars($_SESSION['image']) : 'default-image.jpg'; ?>" alt="Couverture de la série">
         </div>
-        <div class="serie" id="description">
+        <div class="presentation" id="description">
             <h1><?= isset($_SESSION['titre']) ? htmlspecialchars($_SESSION['titre']) : 'Titre non disponible'; ?></h1>
             <h2>Genre : <?php echo htmlspecialchars($_SESSION['genre']); ?></h2>
             <h2>Type : <?php echo htmlspecialchars($_SESSION['type']); ?></h2>
             <h2>Description :</h2>
             <h2><?php echo isset($_SESSION['description']) ? htmlspecialchars($_SESSION['description']) : 'Description non disponible'; ?></h2>
-            <h2><?php echo htmlspecialchars($_SESSION['id']); ?></h2>
             </div>
             </section>
-            <style>
-            #présentation {
-                margin: 10px auto;
-                width: 100%;
-                height: auto;
-                display: grid;
-                grid-template-columns:30% 60%;
-                align-items: center;
-                justify-content: space-around;
-                background-color: blueviolet;
-            }
-            .serie {
-                width: 100%;
-                height: auto;
-                flex-direction: column;
-                justify-content: start;
-                align-items: center;
-                background-color: white;
-            }
-            
-            .serie img {
-                width: 100%;
-                height: auto;
-                object-fit: cover;
-                border: 3px solid black;
-            }
-            
-            #description {
-                border: 3px solid black;
-            }
-            #description h1 {
-                font-size: 2em;
-                margin: 10px 0;
-            }
-            
-        </style>
         <h2>Chapitre</h2>
         <?php
         include 'sql\db_sakura-scan.php';
-        // Récupérer les chapitres liés à l'ID de la session
         $query = "SELECT * FROM chapitres WHERE livre_id = ?";
         $stmt = $mysqli->prepare($query);
         // Vérifie si l'ID est défini dans la session, sinon attribue une valeur par défaut de 0
@@ -98,36 +62,5 @@
             ?>
     </section>
     <?php require_once("header&footer/footer.php"); ?>
-    <style>
-        #chapitre {
-            width: 90%;
-            height: auto;
-            display: grid;
-            grid-template-columns: 20% 20% 20% 20%;
-            grid-template-rows: 20% 20% 20%;
-            margin: 10px auto;
-            align-items: center;
-            justify-content: space-around;
-            border: 3px solid black;
-        }
-        .chapitre{
-            width: 80%;
-            height: 100px;
-            align-items: center;
-            align-content: center;
-        }
-        .chapitre input {
-            width: 80%;
-            height: 70px;
-            justify-content: center;
-            color: white;
-            background-color: gray;
-            cursor: pointer;
-            border-radius: 5px;
-        }
-        .chapitre input[type="submit"]:hover {
-            background-color:rgb(46, 45, 45);
-        }
-    </style>
 </body>
 </html>

@@ -1,0 +1,104 @@
+/* CSS de la page de connexion et inscription */
+#carousel {
+    position: relative;
+    width: 100%;
+    max-width: 550px;
+    min-height: 600px;
+    margin: 0 auto;
+    margin-top: 3%;
+    overflow: hidden;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    /* background-color: aquamarine; */
+}
+
+.contenue-carrousel {
+    display: flex;
+    flex-direction: row;
+}
+
+.carousel-slide {
+    width: 100%;
+    min-height: 600px;
+    height: auto;
+    flex: 0 0 100%;
+    display: none;
+    background-color:#ff5757ce;
+    color: white;
+    align-content: center;
+    text-align: center;
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+.carousel-slide:last-child {
+    background-color:#ff5757da;
+}
+.carousel-slide input {
+    width: 60%;
+    height: 30px;
+    padding: 10px;
+    margin: 10px 0;
+    align-items: center;
+}
+.carousel-slide button {
+    background-color: #2a384371;
+    color: white;
+    width: 40%;
+    padding: 10px;
+    margin: 10px 0;
+    font-size: larger;
+    align-items: center;
+    border: none;
+    cursor: pointer;
+}
+
+.carousel-slide button:hover {
+    background-color:#2a3843fa;
+}
+
+#move{
+    background: none;
+    border: none;
+    color: white;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+#move:hover{
+    text-decoration: underline;
+    color: rgb(0, 0, 0);
+}
+
+#vueimage img{
+    width: 150px;
+    height: auto;
+}
+
+@media screen and (max-width: 850px) {
+    #carousel {
+        width: 90%;
+        height: auto;
+        font-size: 12px;
+        margin-top: 8%;
+    }
+    .carousel-slide {
+        height: auto;
+        min-height: 400px;
+    }
+    .carousel-slide input {
+        height: 10px;
+        padding: auto;
+        align-items: center;
+    }
+    .carousel-slide button {
+        padding: 10px;
+    }
+    #move{
+        font-size: 12px;
+    }
+    #vueimage img{
+        width: 100px;
+        height: auto;
+    }
+}

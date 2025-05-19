@@ -13,11 +13,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="css\uoloads.css">
+    <link rel="stylesheet" href="css\Page_upload.css">
     <title>Déposer</title>
 </head>
-<body> <br>
-<section><h1>Partie Manga</h1></section>
+<body>
     <section id="manga" class="page1">
         <div class="mangas" >
             <form action="db-livre\upload_livre.php" method="post" enctype="multipart/form-data">

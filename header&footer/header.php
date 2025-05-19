@@ -5,16 +5,26 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Tout les fichiers css-->
     <link rel="stylesheet" href="header&footer/header.css">
+    <link rel="stylesheet" href="css/index.css">
+    <link rel="stylesheet" href="css/Calendar.css">
+    <link rel="stylesheet" href="css/chapitre.css">
+    <link rel="stylesheet" href="css/page_serie.css">
+    <link rel="stylesheet" href="css/espace_user.css">
+    <link rel="stylesheet" href="css/Form_connexion.css">
+    <link rel="stylesheet" href="css/Page_upload.css">
+    <link rel="stylesheet" href="css/Profil_livre.css">
 
     
-
+<!-- Titre du site et logo  -->
     <title>Sakura scan</title>
     <link rel="icon" href="header&footer\logo\logo sakura_scan.png" type="image/png" >
 </head>
 <body>
 
     <header>
+        <!-- Si un utilisateur est connecté, il peut voir son speudo et sa photo de profil (à accées a son espace_user) -->
     <?php if (isset($_SESSION['utilisateur_nom'])): ?>
 
         <div class="logo">
@@ -47,6 +57,7 @@
         <?php else : ?>
 
 <?php endif; ?>
+        <!-- Si un administrateur est connecté, il accéde à la page pour déposer des livres -->
     <?php if (isset($_SESSION['admin_nom'])): ?>
 
             <div class="logo">
@@ -77,6 +88,8 @@
         <?php else : ?>
 
 <?php endif; ?>
+        <!-- Si ni utilisateur ni administrateur n'est connecté, il peut voir le logo et la barre de recherche de base-->
+    <!-- Il peut aussi se connecter à son compte -->
     <?php if (!isset($_SESSION['utilisateur_nom']) && !isset($_SESSION['admin_nom'])): ?>
 
         <div class="logo">
