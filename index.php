@@ -63,6 +63,41 @@ $images = $query->fetchAll(PDO::FETCH_ASSOC); ?>
                     <?php endif; ?>
                 <?php endforeach; ?>
         </div>
+
+        <!-- Affichage des images triées par date de sortie (du plus récent au plus ancien) -->
+        <?php
+        // Afficher les 2 derniers chapitres sortis avec leur image
+        $query = $pdo->query("SELECT c.*, l.image, l.titre 
+            FROM chapitres c 
+            JOIN livres l ON c.livre_id = l.id 
+            WHERE l.image IS NOT NULL 
+            ORDER BY chap_sortie DESC 
+            LIMIT 8");
+        $chapitres_recents = $query->fetchAll(PDO::FETCH_ASSOC);
+        ?>
+        <h1>Derniers chapitres sortis</h1>
+        <div class="chapitres_recents">
+            <?php foreach ($chapitres_recents as $chapitre): ?>
+                <form action="db-livre/fonction_search.php" method="get">
+                    <input type="hidden" name="search" value="<?= htmlspecialchars($chapitre['titre']) ?>">
+                    <button type="submit" class="chapitre_slide" style="width: 150px;">
+                        <img src="<?= htmlspecialchars($chapitre['image']) ?>" alt="Image de couverture" style="width: 150px;">
+                    </button>
+                </form>
+                    <h2><?= htmlspecialchars($chapitre['titre']) ?> - Chapitre <?= htmlspecialchars($chapitre['numero']) ?></h2>
+                    <div class="chapitre">
+                    <form action="chapitre.php" method="get">
+                    <input type="hidden" name="chemin" value="<?= htmlspecialchars($chapitre['chemin']) ?>">
+                    <input type="hidden" name="numero" value="<?= htmlspecialchars($chapitre['numero']) ?>">
+                    <input type="submit" value="Chapitre <?= htmlspecialchars($chapitre['numero']) ?>">
+                    </form>
+                    </div>
+                    <?php if (!empty($chapitre['date_sortie'])): ?>
+                        <p>Date de sortie : <?= htmlspecialchars($chapitre['date_sortie']) ?></p>
+                    <?php endif; ?>
+                <!-- </form> -->
+            <?php endforeach; ?>
+        </div>
         <!-- script javascript pour le carrousel -->
             <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
         <script>
