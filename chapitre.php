@@ -73,26 +73,15 @@ $images = array_map(function($file) use ($directory) {
             ?>
             <!-- <input type="submit" value="Chapitre précédent"> -->
         </form>
-<section id="carousel">
-    <div class="carousel-slide">
+<section id="carousel_chapitre">
+        <div class="contenue-carrousel_livre">
+            <div class="carousel-slide_livre">
         <img id="mangaPage" src="<?php echo !empty($images) ? htmlspecialchars($images[0]) : ''; ?>" alt="Page de Manga">
     </div>
-    <button id="prevBtn" class="carousel-prev">Précédent</button>
-    <button id="nextBtn" class="carousel-next">Suivant</button>
-    </div>
+</div>
+<button id="prevBtn" class="carousel-prev">Précédent</button>
+<button id="nextBtn" class="carousel-next">Suivant</button>
     
-    <style>
-        .carousel-next-chapter {
-            position: absolute;
-            bottom: -50px;
-            right: 0;
-            background-color: rgba(0, 0, 0, 0.5);
-            color: white;
-            border: none;
-            padding: 10px;
-            cursor: pointer;
-        }
-        </style>
 </section>
 
 <?php elseif (isset($_SESSION['type']) && $_SESSION['type'] == $type[0]): ?>
@@ -147,6 +136,22 @@ $images = array_map(function($file) use ($directory) {
         const mangaPage = document.getElementById('mangaPage');
         const prevBtn = document.getElementById('prevBtn');
         const nextBtn = document.getElementById('nextBtn');
+
+        // Fonction pour faire défiler le carrousel
+        
+        let currentSlide = 0;
+        
+        const slides = document.querySelectorAll('.carousel-slide_livre');
+        function moveCarousel(direction) {
+            slides[currentSlide].style.display = 'none';
+            currentSlide = (currentSlide + direction + slides.length) % slides.length;
+            slides[currentSlide].style.display = 'block';
+}
+
+// Initialize carousel
+slides.forEach((slide, index) => {
+    slide.style.display = index === 0 ? 'block' : 'none';
+});
     
         prevBtn.addEventListener('click', () => {
             currentIndex = (currentIndex - 1 + images.length) % images.length;
@@ -170,5 +175,6 @@ $images = array_map(function($file) use ($directory) {
 
 </script>
 <?php require_once("header&footer/footer.php"); ?>
+<?php exit; ?>
 </body>
 </html>

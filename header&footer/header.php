@@ -78,7 +78,7 @@
             </div>
 
             <div class="logo-container" id="logo5"> 
-                <a href="Page_upload.php"><img src="header&footer\logo\User.png" alt="Photo de profil"></a>
+                <a href="Page_upload.php"><img src="header&footer\logo\upload.png" alt="Photo de profil"></a>
             </div>
 
             <div class="logo-container" id="logo7"> 
